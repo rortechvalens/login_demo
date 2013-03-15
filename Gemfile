@@ -6,6 +6,7 @@ gem 'rails', '3.2.12'
 # Sqlite Support
 gem 'pg'
 gem 'engineyard' , '~>2.0'
+gem 'td', "~> 0.10.22"
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
