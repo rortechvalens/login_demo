@@ -8,7 +8,7 @@ class LoginController < ApplicationController
   def create
    user = User.authenticate(params[:user][:email], params[:user][:password])
     if user
-      UserMailer.welcome_email(user).deliver
+     # UserMailer.welcome_email(user).deliver
       session[:user_id] = user.id
       redirect_to :action => "welcome", :id => session[:user_id]
     else

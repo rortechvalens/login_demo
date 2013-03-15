@@ -12,7 +12,7 @@ class RegistrationController < ApplicationController
   #Output : On successful registration user redirect to login page else Error messages occur on registration page.
   def create
      @registration = User.new(params[:registraion])
-      UserMailer.welcome_email(@registration).deliver
+     # UserMailer.welcome_email(@registration).deliver
      respond_to do |format|
        if @registration.save
        
