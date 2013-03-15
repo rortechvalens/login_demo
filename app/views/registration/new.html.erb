@@ -1,0 +1,45 @@
+<h3>Registration Here</h3>
+
+<%= form_for @registration, :as => :registraion, :url => registration_path, :method => "post" do |f| %>
+
+<!-- CODE FOR DISPLAY ERROR MESSAGES -->
+   <% if @registration.errors.any? %>
+    <div id="error_explanation">
+<% pluralize(@registration.errors.count, "error") %>
+
+      <ul>
+      <% @registration.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<p>
+  <label>Enter First Name</label><br/>
+  <%=f.text_field :first_name %>
+</p>
+
+<p>
+  <label>Enter Last Name</label><br/>
+  <%=f.text_field :last_name %>
+</p>
+
+<p>
+  <label>Enter Your E-mail</label><br/>
+  <%=f.email_field :email %>
+</p>
+
+<p>
+  <label>Enter Password</label><br/>
+  <%=f.password_field :password %>
+</p>
+
+<p>
+  <label>Enter Password Again</label><br/>
+  <%=f.password_field :password_confirmation %>
+</p>
+
+<p>
+   <%=f.submit :Submit %>
+</p>
+<% end %>
